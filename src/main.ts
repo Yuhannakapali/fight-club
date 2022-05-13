@@ -1,8 +1,7 @@
 import './style.css'
+import Game from "./app/base/game";
+// const app = document.querySelector<HTMLDivElement>('#game-screen')!
+const id: string = 'game-screen';
 
-const app = document.querySelector<HTMLDivElement>('#app')!
-
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const game = new Game(id, 1440, 900);
+game.render()
