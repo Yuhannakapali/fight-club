@@ -1,3 +1,6 @@
+import Player from "../player";
+import Sprite from "../sprite";
+
 export interface IGameConfig {
     id: string
     height: number;
@@ -16,4 +19,9 @@ export interface ISpriteConfig {
 
 export interface IPlayerConfig extends ISpriteConfig {
     velocity: IPosition;
+}
+
+export interface IGameRenderConfig {
+    players: Player[],
+    assets: Sprite[]
 }

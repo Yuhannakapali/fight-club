@@ -12,7 +12,8 @@ const game = new Game(config);
 
 
 function animate() {
-    game.render(player1, player2)
+    const config = { players: [player1, player2], assets: [] }
+    game.render(config)
     window.requestAnimationFrame(animate);
 }
 

@@ -1,5 +1,5 @@
 import Player from "./player";
-import { IGameConfig } from "./types";
+import { IGameConfig, IGameRenderConfig } from "./types";
 
 export default class Game {
     constructor(config: IGameConfig) {
@@ -18,13 +18,21 @@ export default class Game {
     screenWidth!: number;
     screenHeight!: number;
 
-    render(player1: Player, player2: Player) {
+    render(gameRenderOption: IGameRenderConfig) {
+        const { players, assets } = gameRenderOption;
         this.ctx.canvas.height = this.screenHeight;
         this.ctx.canvas.width = this.screenWidth;
         this.ctx.fillStyle = 'black';
         this.ctx.fillRect(0, 0, this.screenWidth, this.screenHeight);
-        player1.update(this.ctx);
-        player2.update(this.ctx);
+        if (players.length > 0) {
+            players.forEach((player: Player) => player.update(this.ctx))
+        }
+        if (assets.length > 0) {
+            assets.forEach(asset => {
+                asset.render(this.ctx)
+            });
+        }
+
     }
 
 
