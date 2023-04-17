@@ -13,6 +13,10 @@ export default class Player extends Sprite {
     isBlocking: boolean = false;
     isAttacking: boolean = false;
 
+    get getHealth() {
+        return this.health;
+    }
+
     attack() {
         this.isAttacking = true;
         setTimeout(() => {
@@ -42,7 +46,7 @@ export default class Player extends Sprite {
         } else {
             this.velocity.y += this.gravity;
         }
-        this.render(ctx)
+        this.render(ctx, this.isAttacking)
 
     }
 }
