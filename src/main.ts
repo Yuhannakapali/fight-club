@@ -39,6 +39,8 @@ window.addEventListener('keydown', (e: KeyboardEvent) => {
             break;
     }
 
+
+
     switch (e.key) {
         case "w":
             player1.velocity.y = -30
