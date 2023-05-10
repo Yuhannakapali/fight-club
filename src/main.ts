@@ -2,7 +2,6 @@ import './style.css'
 import Game from "./app/base/game";
 import { IGameConfig } from './app/base/types';
 import Player from './app/base/player';
-// import Sprite from './app/base/sprite';
 // const app = document.querySelector<HTMLDivElement>('#game-screen')!
 const id: string = 'game-screen';
 const config: IGameConfig = { id: id, width: 1440, height: 900 };
@@ -11,14 +10,10 @@ const player1 = new Player({ position: { x: 10, y: 10 }, velocity: { x: 0, y: 0 
 const player2 = new Player({ position: { x: 200, y: 10 }, velocity: { x: 0, y: 0 }, color: 'blue' });
 const game = new Game(config);
 
-// const background = new Sprite({ position: { x: 0, y: 0 }, color: "red" })
 
 function animate() {
     const config = { players: [player1, player2], assets: [] }
     game.render(config)
-    if (player1.getHealth === 0 || player2.getHealth === 0) {
-        return;
-    }
     window.requestAnimationFrame(animate);
 }
 
