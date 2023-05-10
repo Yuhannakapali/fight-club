@@ -25,9 +25,3 @@ export interface IGameRenderConfig {
     players: Player[],
     assets: Sprite[]
 }
-
-export interface IAttackBox {
-    position: IPosition;
-    width: number;
-    height: number;
-}

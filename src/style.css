@@ -1,36 +1,8 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-#game {
-  position: relative;
-  display: inline-block;
-}
-
-#game-health-bar-container {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  padding: 20px;
-}
-
-#player-health-bar {
-  width: 100%;
-  height: 30px;
-  background-color: yellow;
-}
-
-#timmer {
-  background-color: red;
-  height: 100px;
-  width: 100px;
-  flex-shrink: 0;
-}
-#opponent-health-bar {
-  width: 100%;
-  height: 30px;
-  background-color: yellow;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
