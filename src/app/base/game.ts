@@ -1,5 +1,6 @@
 import Player from "./player";
 import { IGameConfig, IGameRenderConfig } from "./types";
+import { detectedRectangleCollision } from "../utils";
 
 export default class Game {
     constructor(config: IGameConfig) {
@@ -32,8 +33,26 @@ export default class Game {
                 asset.render(this.ctx)
             });
         }
+        const [player1, player2] = players;
+        if (detectedRectangleCollision(player1, player2)) {
+            if (player1.isAttacking && !player2.isBlocking) {
+                player2.decreaseHealth(10);
+                player1.isAttacking = false;
+            }
+
+        };
+
+        if (detectedRectangleCollision(player2, player1)) {
+            if (player2.isAttacking && !player1.isBlocking) {
+                player1.decreaseHealth(10);
+                player2.isAttacking = false;
+            }
+        };
+
 
     }
 
 
+
 }
+
